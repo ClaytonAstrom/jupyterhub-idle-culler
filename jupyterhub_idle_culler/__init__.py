@@ -662,6 +662,7 @@ class IdleCuller(Application):
         "cull-named-servers": "IdleCuller.cull_named_servers",
         "cull-users": "IdleCuller.cull_users",
         "internal-certs-location": "IdleCuller.internal_certs_location",
+        "log-level": "IdleCuller.log_level",
         "max-age": "IdleCuller.max_age",
         "remove-named-servers": "IdleCuller.remove_named_servers",
         "ssl-enabled": "IdleCuller.ssl_enabled",
@@ -712,6 +713,8 @@ class IdleCuller(Application):
             api_page_size=self.api_page_size,
             cull_default_servers=self.cull_default_servers,
             cull_named_servers=self.cull_named_servers,
+            config_file=self.config_file,
+            log_level=self.log_level,
         )
         # schedule first cull immediately
         # because PeriodicCallback doesn't start until the end of the first interval
